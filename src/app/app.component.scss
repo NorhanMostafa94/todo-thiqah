@@ -1,0 +1,21 @@
+@import "abstracts/variables";
+
+.app-wrapper{
+    display: flex;
+    flex-direction: column;
+    &__header-container{
+        display: flex;
+        align-items: center;
+        background-color: $white-color;
+        height: 30px;
+        padding: 25px;
+        color: $text-color;
+        font-size: 2rem;
+        .language-container{
+            cursor: pointer;
+        }
+    }
+    &__body{
+        margin-top: 50px;
+    }
+}
