@@ -16,7 +16,7 @@ export class TranslationService {
   constructor(private translateService: TranslateService,
     private rendererFactory: RendererFactory2,) {
     this.renderer = rendererFactory.createRenderer(null, null);
-
+    this.init();
   }
 
   init() {
