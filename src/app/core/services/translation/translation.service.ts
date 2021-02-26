@@ -17,10 +17,10 @@ export class TranslationService {
     private rendererFactory: RendererFactory2,) {
     this.renderer = rendererFactory.createRenderer(null, null);
     this.init();
+    
   }
 
   init() {
-
     const currentLang = window.localStorage.getItem('Lang');
     if (!currentLang) {
       this.lang = Lang.english;
@@ -36,6 +36,7 @@ export class TranslationService {
         this.isArabic.next(false);
       }
     }
+    this.translateService.setDefaultLang(this.lang);
 
   }
 
@@ -50,6 +51,12 @@ export class TranslationService {
       this.renderer.removeClass(document.body, 'rtl');
       this.isArabic.next(false);
     }
+  }
+
+  
+  getCurrentLanguage() {
+    return this.lang;
+
   }
 
 }

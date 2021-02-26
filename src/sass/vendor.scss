@@ -1,0 +1,18 @@
+/* Scrollbar Styles Start Here*/
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 4px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $dark-gray;
+    border-radius: 10px;
+  }

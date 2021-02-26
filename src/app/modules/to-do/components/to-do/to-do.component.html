@@ -1,0 +1,16 @@
+<app-svg-assets></app-svg-assets>
+
+<div class="todo-container" [ngClass]="{'todo-container--done': todo.isDone}">
+    <div class="todo-container__text">{{todo.name}}</div>
+    <div class="todo-container__controls-container">
+        <div class="control">
+            <input type="checkbox" [name]="'todo'+todo.id" [id]="'todo'+todo.id" [checked]="todo.isDone" (change)="todo.isDone = !todo.isDone">
+        </div>
+        <div class="control">
+            <app-icon icon="edit"></app-icon>
+        </div>
+        <div class="control">
+            <app-icon icon="delete"></app-icon>
+        </div>
+    </div>
+</div>

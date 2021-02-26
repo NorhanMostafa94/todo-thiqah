@@ -1,0 +1,19 @@
+@import "abstracts/variables";
+
+.todo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $text-color;
+    &--done {
+        color: $text-light-color;
+    }
+    &__controls-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .control {
+            margin: 0 4px;
+        }
+    }
+}
