@@ -1,0 +1,46 @@
+@import 'abstracts/variables';
+
+.textarea-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    textarea {
+      border: 1px solid $light-gray;
+      border-radius: 8px;
+      background-color: $white-color;
+      padding: 0.5rem 2rem;
+      width: 100%;
+      outline: none;
+      resize: none;
+      text-align: start;
+      font-size: 1.7rem;
+      resize: none;
+
+      &::placeholder {
+        color: $text-color;
+        font-size: 1.7rem;
+      }
+      &:focus {
+        border: 1px solid $primary-color;
+      }
+      &:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: $text-color;
+      }
+
+      &::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: $text-color;
+      }
+
+      &.rtl {
+
+      }
+
+      &.dir-ltr {
+        &:focus {
+          direction: rtl;
+        }
+      }
+    }
+  }

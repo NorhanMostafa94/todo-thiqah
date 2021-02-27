@@ -6,10 +6,10 @@
         <div class="control">
             <input type="checkbox" [name]="'todo'+todo.id" [id]="'todo'+todo.id" [checked]="todo.isDone" (change)="todo.isDone = !todo.isDone">
         </div>
-        <div class="control">
+        <div class="control" (click)="edit(todo)">
             <app-icon icon="edit"></app-icon>
         </div>
-        <div class="control">
+        <div class="control" (click)="delete(todo)">
             <app-icon icon="delete"></app-icon>
         </div>
     </div>

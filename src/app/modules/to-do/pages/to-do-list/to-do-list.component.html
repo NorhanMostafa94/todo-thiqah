@@ -1,10 +1,38 @@
 <div class="todo-list-page">
     <div class="todo-list-page__list-wrapper">
         <div class="todo-list-page__list-wrapper__container">
-            <div class="todo-container" *ngFor="let todo of todos">
-                <app-to-do [todo]="todo"></app-to-do>
+            <div class="todo-container" *ngFor="let todo of todos;let i = index">
+                <app-to-do [todo]="todo" (onEdit)="openEditForm($event)" (onDelete)="openDeleteModal($event,i)">
+                </app-to-do>
+            </div>
+            <div class="form-wrapper" [ngClass]="{'show': isFormOpen}">
+                <form class="form-container" [formGroup]="todoForm">
+                    <app-textarea [formGroup]="todoForm" controlName="name" name="textarea"
+                        placeholder="WHAT_DO_YOU_WILL_DO_TODAY"></app-textarea>
+                    <div class="btns-container">
+                        <button class="btn primary" (click)="save()">{{'SAVE' | translate}}</button>
+                        <button class="btn danger-outline cancel-btn" (click)="cancelForm()">{{'CANCEL' |
+                            translate}}</button>
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="todo-list-page__list-wrapper__add-control">+</div>
+        <div class="todo-list-page__list-wrapper__add-control" *ngIf="!isFormOpen" (click)="openAddForm()">+</div>
     </div>
 </div>
+
+<div class="modal" *ngIf="isDeleteModalOpen">
+    <app-modal [template]="deleteTemplate"></app-modal>
+</div>
+
+<ng-template #deleteTemplate>
+    <div class="delete-modal">
+        <div class="delete-modal__text-container" translate="ARE_YOU_SURE_YOU_WANT_TO_DELETE" [translateParams]="{todo:todo.name}">
+        </div>
+        <div class="delete-modal__btns-container">
+            <button class="btn primary" (click)="delete()">{{'DELETE' | translate}}</button>
+            <button class="btn danger-outline cancel-btn" (click)="cancelDelete()">{{'CANCEL' |
+                translate}}</button>
+        </div>
+    </div>
+</ng-template>
