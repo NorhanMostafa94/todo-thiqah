@@ -1,4 +1,9 @@
 {
     "ARABIC": "العربية",
-    "ENGLISH": "English"
+    "ENGLISH": "English",
+    "SAVE": "Save",
+    "CANCEL": "Cancel",
+    "DELETE": "Delete",
+    "WHAT_DO_YOU_WILL_DO_TODAY": "What do you will do today",
+    "ARE_YOU_SURE_YOU_WANT_TO_DELETE": "Are you sure you want to delete {{todo}} ?"
 }

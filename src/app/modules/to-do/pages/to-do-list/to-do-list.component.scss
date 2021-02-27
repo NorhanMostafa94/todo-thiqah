@@ -10,7 +10,7 @@
         position: relative;
 
         &__container {
-            width: 500px;
+            width: 270px;
             height: 500px;
             max-height: 500px;
             display: flex;
@@ -20,9 +20,34 @@
             padding: 30px;
             position: relative;
             overflow-y: scroll;
-            .todo-container{   
+            .todo-container {
                 width: 100%;
                 margin-bottom: 20px;
+            }
+            .form-wrapper {
+                width: 80%;
+                display: flex;
+                position: absolute;
+                bottom: -141px;
+                visibility: hidden;
+                transition: all 0.7s ease-out;
+                background-color: $light-gray;
+                padding: 20px;
+                &.show {
+                    visibility: visible;
+                    bottom: 0;
+                }
+                .form-container {
+                    width: 100%;
+                    .btns-container {
+                        margin-top: 20px;
+                        padding: 0 20px;
+                        display: flex;
+                        .cancel-btn {
+                            margin: 0 5px;
+                        }
+                    }
+                }
             }
         }
 
@@ -39,6 +64,22 @@
             color: $text-color;
             font-size: 3rem;
             cursor: pointer;
+        }
+    }
+}
+
+.delete-modal {
+    &_text__container {
+        color: $text-color;
+        font-size: 2rem;
+    }
+    &__btns-container {
+        margin-top: 20px;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        .cancel-btn {
+            margin: 0 5px;
         }
     }
 }

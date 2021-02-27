@@ -1,0 +1,45 @@
+@import "abstracts/variables";
+
+.btn {
+    border-radius: 5px;
+    outline: none !important;
+    font-size: 12px;
+    font-weight: 400;
+    border: 0;
+    text-align: center;
+    color: $white-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 4px 14px 0 rgba(0, 100, 80, 0.2);
+    line-height: unset;
+    padding-left: 14.5px;
+    padding-right: 14.5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: 0.3s all;
+
+    &:focus {
+        box-shadow: unset;
+    }
+
+    &.primary {
+        color: $white-color;
+        background-color: $primary-color;
+        &:hover,
+        &:focus {
+            background-color: $dark-gray;
+        }
+    }
+
+    &.danger-outline {
+        border: 1px solid $danger-color;
+        color: $danger-color;
+        background-color: transparent;
+        &:hover,
+        &:focus {
+            background-color: $danger-color;
+            color: $white-color;
+        }
+    }
+}
